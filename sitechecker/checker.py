@@ -17,11 +17,11 @@ def check_connection(url, timeout=2):
         connection = HTTPConnection(host=host, port=port, timeout=timeout)
         try:
             connection.request("HEAD", "/")
-            return True
+            return True, ""
         except Exception as e:
-            error = e
+            error = str(e)
         finally:
             connection.close()
-    raise error
+    return False, error
 
 

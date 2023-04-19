@@ -19,15 +19,16 @@ def read_user_cli_args(args: Sequence[str] | None = None) -> argparse.Namespace:
     return parser.parse_args(args)
 
 
-def display_check_result(result, url, error=""):
+def display_check_result(url, is_online, error):
     """Display the result of a connectivity check."""
-    print(generate_check_results(result, url, error))
+    print(generate_check_results(url, is_online, error))
 
 
-def generate_check_results(result, url, error="") -> str:
+def generate_check_results(url, is_online, error) -> str:
     start = f'O status da "{url}" é: '
-    if result:
+    if is_online:
         return start + '"Online!"'
     else:
         return start + f'"Offline?"\n  Erro: "{error}"'
+
 
