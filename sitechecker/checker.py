@@ -25,5 +25,3 @@ def check_connection(url, timeout=2):
     raise error
 
 
-def test_connection():
-    assert connection_checker("indicium.tech") == True

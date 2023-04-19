@@ -27,8 +27,7 @@ def display_check_result(result, url, error=""):
 def generate_check_results(result, url, error="") -> str:
     start = f'O status da "{url}" é: '
     if result:
-        return start + '"Online!" 👍'
+        return start + '"Online!"'
     else:
-        return start + f'"Offline?" 👎 \n  Erro: "{error}"'
+        return start + f'"Offline?"\n  Erro: "{error}"'
 
-    
