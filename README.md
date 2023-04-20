@@ -13,7 +13,7 @@ py -m venv .env
 .env\Scripts\activate
 ```
 ## No Linux:
-  Entre na pasta que deseja criar o repositório do projeto e execute os seguintes comandos:
+  No Prompt de comandos do Linux, entre na pasta que deseja criar o repositório do projeto e execute os seguintes comandos:
 ```
  python -m venv .env
 ```
@@ -23,3 +23,7 @@ py -m venv .env
 ```
 
 # Clonando o repositório:
+  No Prompt de Comandos execute:
+ ```
+ git clone git@github.com:mariatefranca/mtf-indicium.git
+ ```
