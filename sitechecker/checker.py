@@ -8,7 +8,6 @@ def check_connection(url, timeout=2):
     Raise an exception otherwise.
     """
     # Defines a generic Exception as placeholder
-    error = Exception("Ops, algo errado.")
     # Parses URL and finds host
     parser = urlparse(url)
     host = parser.netloc or parser.path.split("/")[0]
@@ -16,7 +15,7 @@ def check_connection(url, timeout=2):
     for port in (80, 443):
         connection = HTTPConnection(host=host, port=port, timeout=timeout)
         try:
-            connection.request("HEAD", "/")
+            connection.request("HEAD", "/") # Usa métodos HTTP
             return True, ""
         except Exception as e:
             error = str(e)
