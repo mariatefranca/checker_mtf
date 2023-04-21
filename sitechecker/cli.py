@@ -4,43 +4,31 @@ from typing import Sequence
 import pathlib
 
 def read_user_cli_args(args: Sequence[str] | None = None) -> argparse.Namespace:
-    """Handle the CLI arguments and options."""
+    """Recebe os comandos do usuário"""
     parser = argparse.ArgumentParser(
-        prog="sitechecker", description="Teste a disponibilidade de uma URL"
+        prog="sitechecker", description="Este aplicativo testa a conectividade de um ou mais sites através de suas URLs. Para verificar você pode utilizar as opções: "
     ) # classe ArgumentParser que recebe argumentos da linha de comando
     parser.add_argument(
         "-u",
         "--urls",
-        metavar="URLs", # define um nome para o argumento em uso
+        metavar="URL", # Define um nome para o argumento em uso
         nargs="+",
         type=str,
         default=[],
-        help="insira um ou mais URLs",
+        help="insira um ou mais URLs. Ex: python sitecheker -u site.com outrosite.com.br",
     )
     parser.add_argument(
         "-f",
         "--imput-file",
-        metavar="file",
+        metavar="FILE",
         # nargs="+", # números de argumentos que podem ser usados
         type=argparse.FileType("r"),
-        help="insira um arquivo csv contendo uma ou mais URLs",
+        help="insira um arquivo csv contendo uma ou mais URLs. Ex: python sitechecker -f nomearquivo.csv",
     )
     return parser.parse_args(args)
 
-
-def display_check_result(url, is_online, error):
-    """Display the result of a connectivity check."""
-    print(generate_check_results(url, is_online, error))
-
-
-def generate_check_results(url, is_online, error) -> str:
-    start = f'O status da "{url}" é: '
-    if is_online:
-        return start + '"Online!"'
-    else:
-        return start + f'"Offline?"\n  Erro: "{error}"'
-
 def get_urls(user_args):
+    """Obtém as URLs digitadas ou disponibilizadas em um arquivo csv"""
     urls = []
     urls += user_args.urls
     if user_args.imput_file:
@@ -50,13 +38,19 @@ def get_urls(user_args):
         urls += lines
     return urls
 
-# def _read_urls_from_file(file):
-#     file_path = pathlib.Path(file)
-#     with file_path.is_file():
-#         urls = [url.strip() for url in urls_file]
-#         if urls:
-#             return urls
-#             print(f"Error: empty file, {file}", file= sys.stderr)
-#         else:
-#             print("Error: input file not found", file= sys.stderr)
-#         return []
+
+def generate_check_results(url, is_online, error) -> str:
+    """Gera os resultados da checagem de conexão"""
+    start = f'O status da "{url}" é: '
+    if is_online:
+        return start + '"Online!"'
+    else:
+        return start + f'"Offline?"\n  Erro: "{error}"'
+
+
+def display_check_result(url, is_online, error):
+    """Imprime os resultados da checagem de conexão"""
+    print(generate_check_results(url, is_online, error))
+
+
+
