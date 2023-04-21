@@ -34,23 +34,29 @@ py -m venv .env
   ```
   pip install -r requirements.txt
   ```
-# Rodando o aplicativo sitechecker
+# Rodando o aplicativo sitechecker manualmente
   Execute o comando abaixo para receber as intruções de como passar os sites a serem checados:
   ```
-  python sitecker -h
+  python -m sitechecker -h
   ```
+
 É possivel fornecer as urls diretamente no shell, utilizando -u e digitando quantas URLs desejar:
- ```
- python sitechecker -u nomedosite.com outrosite.com.br
 
- ```
- É possivel fornecer fornecer um arquivo csv contendo as URLs a serem testas, utilizando -f e digitndo o caminho e nome do arquivo:
-  ```
- python sitechecker -f lista.csv
+```
+python -m sitechecker -u nomedosite.com outrosite.com.br
+```
+ 
+É possivel fornecer fornecer um arquivo csv contendo as URLs a serem testas, utilizando -f e digitndo o caminho e nome do arquivo:
+ 
+```
+python -m sitechecker -f lista.csv
+```
+ 
+ # Rodando o sitechecker uma vez por dia usando o cron
+ 
+Execute o comando:
+```
+./install_checker.sh
+```
 
- ```
-  
- 
- 
-  
-  
+O script está programado para verificar as URLs que estão no arquivo `cron_urls.csv` todo dia às 23 horas. Você pode editar esse arquivo com as URLs que deseja.
