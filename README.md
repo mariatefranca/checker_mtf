@@ -10,8 +10,8 @@ Aplicação em python que testa a conectividade de sites.
 
 # Criando o ambiente de trabalho
   O ambiente de trabalho pode ser criado no Windows ou no Linux. 
-## No windows:
-  Inicie a Prompt de Comando, entre na pasta que deseja criar o repositório do projeto e execute os seguintes comandos:
+## No Windows:
+  Inicie a Prompt de Comando, entre na pasta do repositório do projeto e execute os seguintes comandos:
 ```
 py -m venv .env
 ```
@@ -20,33 +20,33 @@ py -m venv .env
 .env\Scripts\activate
 ```
 ## No Linux:
-  No Prompt de comandos do Linux, entre na pasta que deseja criar o repositório do projeto e execute os seguintes comandos:
+  No shell do Linux, entre na pasta do projeto e execute os seguintes comandos:
 ```
- python -m venv .env
+ python3 -m venv .env
 ```
   Ative o ambiente de trabalho:
 ```
  source .env/bin/activate
 ```
 
-# Carregando os pacotes utilizados no projeto atravé do uso de requirements.tx 
+# Instalando os pacotes utilizados no projeto através do arquivo requirements.txt
   Entre na pasta do repositório criado e execute o comando:
   ```
   pip install -r requirements.txt
   ```
+
 # Rodando o aplicativo sitechecker manualmente
-  Execute o comando abaixo para receber as intruções de como passar os sites a serem checados:
+  Execute o comando abaixo no shell para receber as intruções de como passar os sites a serem checados. Caso voc6e utilize a linha de comando do Windows substitua '`python` por `py` nos comandos abaixo.
   ```
   python -m sitechecker -h
   ```
-
-É possivel fornecer as urls diretamente no shell, utilizando -u e digitando quantas URLs desejar:
+  É possivel fornecer as urls diretamente na linha de comando, utilizando -u e digitando quantas URLs desejar:
 
 ```
 python -m sitechecker -u nomedosite.com outrosite.com.br
 ```
  
-É possivel fornecer fornecer um arquivo csv contendo as URLs a serem testas, utilizando -f e digitndo o caminho e nome do arquivo:
+  É possível fornecer fornecer um arquivo csv contendo as URLs a serem testas, utilizando -f e digitndo o caminho e nome do arquivo:
  
 ```
 python -m sitechecker -f lista.csv
@@ -54,9 +54,10 @@ python -m sitechecker -f lista.csv
  
  # Rodando o sitechecker uma vez por dia usando o cron
  
-Execute o comando:
+  No shell do Linux, execute o comando:
 ```
 ./install_checker.sh
 ```
 
-O script está programado para verificar as URLs que estão no arquivo `cron_urls.csv` todo dia às 23 horas. Você pode editar esse arquivo com as URLs que deseja.
+  O script está programado para verificar as URLs que estão no arquivo `cron_urls.csv` todo dia às 23 horas. Você pode editar esse arquivo com as URLs que deseja.
+
