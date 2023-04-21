@@ -36,7 +36,7 @@ py -m venv .env
   ```
 
 # Rodando o aplicativo sitechecker manualmente
-  Execute o comando abaixo no shell para receber as intruções de como passar os sites a serem checados. Caso voc6e utilize a linha de comando do Windows substitua '`python` por `py` nos comandos abaixo.
+  Execute o comando abaixo no shell para receber as intruções de como passar os sites a serem checados. Caso voc6e utilize a linha de comando do Windows substitua `python` por `py` nos comandos abaixo.
   ```
   python -m sitechecker -h
   ```
@@ -61,3 +61,4 @@ python -m sitechecker -f lista.csv
 
   O script está programado para verificar as URLs que estão no arquivo `cron_urls.csv` todo dia às 23 horas. Você pode editar esse arquivo com as URLs que deseja.
 
+Obs: Este projeto foi desenvolvido para uma tarefa do programa Lighthouse da Indicium, tendo como base um exemplo disponível em [https://realpython.com/site-connectivity-checker-python/](https://realpython.com/site-connectivity-checker-python/).
