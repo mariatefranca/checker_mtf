@@ -27,7 +27,7 @@ py -m venv .env
   Ative o ambiente de trabalho:
 ```
  source .env/bin/activate
-``
+```
 
 # Carregando os pacotes utilizados no projeto atravé do uso de requirements.tx 
   Entre na pasta do repositório criado e execute o comando:
@@ -51,6 +51,6 @@ py -m venv .env
  ```
   
  
-  
+ 
   
   
